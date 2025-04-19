@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use(function (req, res, next) {
 
-    // Website you wish to allow to connect
+    // Website you wish to allow to 
     res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
 
     // Request methods you wish to allow
@@ -49,11 +49,17 @@ initWebRoutes(app);
 
 connectDB();
 
-let port = process.env.PORT || 6969;
-//nếu chưa gán port ở file env thì gán bằng 6969
+
+//nếu chưa gán port ở file env thì gán bằng 1010
+// let port = process.env.PORT || 5000;
+
+// app.listen(port, ()=>{
+//     //callback
+//     console.log("Backend Nodejs is running on the port : "+port )
+// })
 
 
-app.listen(port, ()=>{
-    //callback
-    console.log("Backend Nodejs is running on the port : "+port )
-})
+let PORT = process.env.PORT || 5000;
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server is running on port ${PORT}`);
+  });

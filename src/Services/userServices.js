@@ -17,29 +17,29 @@ let selectedOrganizationAnnouncement='';
 
 
 ////////////////////////////////////////////DGTS/////////////////////////////////////////////////
-(async () => {
-    let numberOfPages = 20
-    const browser = await chromium.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.goto('https://dgts.moj.gov.vn/portal/search/auction-notice?assetName=&endDate=&endPublishDate=&fromFirstPrice=&fullName=&numberPerPage='+numberOfPages+'&p=3&propertyTypeId=&provinceId=&searchSimple=&selectedOrganizationId=&startDate=&startPublishDate=&toFirstPrice=&typeOrder=2', { waitUntil: 'networkidle' });
+// (async () => {
+//     let numberOfPages = 20
+//     const browser = await chromium.launch({ headless: true });
+//     const page = await browser.newPage();
+//     await page.goto('https://dgts.moj.gov.vn/portal/search/auction-notice?assetName=&endDate=&endPublishDate=&fromFirstPrice=&fullName=&numberPerPage='+numberOfPages+'&p=3&propertyTypeId=&provinceId=&searchSimple=&selectedOrganizationId=&startDate=&startPublishDate=&toFirstPrice=&typeOrder=2', { waitUntil: 'networkidle' });
 
-    htmlContent = await page.content();
-    const $ = cheerio.load(htmlContent);
-    $('article').each((index, element) => {
-        // console.log($(element).text());
-        // console.log('ele: ',element)
-        arr.push($(element).text())
-    });
+//     htmlContent = await page.content();
+//     const $ = cheerio.load(htmlContent);
+//     $('article').each((index, element) => {
+//         // console.log($(element).text());
+//         // console.log('ele: ',element)
+//         arr.push($(element).text())
+//     });
     
-})();
+// })();
 ////////////////////////////////////daugianVNA///////////////////////////////////////////////////////
-async function fetchData(url) {
-    try {
+// async function fetchData(url) {
+//     try {
 
-    } catch (error) {
-        console.error('Có lỗi xảy ra:', error);
-    }
-}
+//     } catch (error) {
+//         console.error('Có lỗi xảy ra:', error);
+//     }
+// }
 
 
 let getAuctionAnnouncementService = (searchData)=>{
